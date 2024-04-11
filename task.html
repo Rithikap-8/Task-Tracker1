@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body {
+    background-color: rgb(116, 209, 221);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+
+        #taskTracker {
+            flex: 1;
+            margin-right: 20px;
+            padding-left: 20px;
+           
+            border-radius: 5px;
+            text-align: center; /* Center the content */
+        }
+
+        #stopwatch {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 100px;
+            
+            border-radius: 5px;
+            text-align: center; /* Center the content */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"] {
+            width: 200%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+tr{
+    background-color: aliceblue;
+    color: black;
+}
+td{
+    border: 1px solid black;
+            padding: 10px; 
+            text-align: center;
+}
+        th{
+            border: 1px solid black;
+            padding: 10px; 
+            text-align: center;
+            background-color: blue;
+        }
+        button{
+            background-color: teal;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="taskTracker">
+        
+        <h1 style="background-color: black; color:whitesmoke ;padding-top: 20px; margin-top: 10px;">Task Tracker</h1>
+        <select id="categorySelect">
+            <option value="all">All</option>
+            <option value="personal">Personal</option>
+            <option value="official">Official</option>
+        </select>
+        <button onclick="filterTable()">Filter By Category</button>
+        <br><br>
+        <table id="taskTable">
+            <thead style="background-color: blue; color: white;">
+                <th>Category</th>
+                <th>Sub Category</th>
+                <th>Time</th>
+                <th>Notes</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <br><br>
+    </div>
+    <div id="stopwatch" style="padding-top: 50px; padding-right:50px;">
+        <div class="stopwatch">00:00:00</div>
+        <br/>
+        
+        <p><button id="startstopbutton" onclick="startstopbutton()">START</button> <button onclick="resetTimer()">RESET</button></p>
+        <form id="taskForm">
+         
+           <p> Category </p>   <input type="text" id="category" name="category" placeholder="Enter category.....">
+            
+           <p> Subcategory</p> <input type="text" id="subcategory" name="subcategory" placeholder="Enter subcategory.....">
+           
+           <p> Task   </p>      <input type="text" id="task" name="task" placeholder="Enter task.....">
+        </form>
+        <button onclick="addTask()">Add Task</button>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
+
